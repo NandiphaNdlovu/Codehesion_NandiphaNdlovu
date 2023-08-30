@@ -40,7 +40,31 @@ export const Register = () => {
     return (
         //have a user input form 
         <div>
-
+            <div className="login-container">
+        <h1>Register</h1>
+        <Formik
+          initialValues={{ name: "", surname: "" ,email:"",role:""}}
+          onSubmit={async (values) => {
+            //call axios 
+            //shouldnt be here must b in separate use the layers to make it look good 
+            if (values.uname === data.username && values.pword === data.password) {
+              console.log(values,"correct",token_o)
+              //ehat does this code do?
+              login()
+              await new Promise((resolve) => setTimeout(resolve, 5000));
+              }else{
+                  console.log(values,'incorrect')
+              }
+          }}
+        >
+          <Form>
+            <Field name="name" type="text" />
+            <Field name="surname" type="text" />
+            {/* it will then go into showing the categories if credentials correct*/}
+            <button type="submit">Submit</button>
+          </Form>
+        </Formik>
+      </div>
         </div>
     )
 }
