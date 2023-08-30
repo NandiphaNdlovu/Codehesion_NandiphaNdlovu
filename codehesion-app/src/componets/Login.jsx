@@ -1,3 +1,4 @@
+//need to make this global some how so i dont have to keep repeating this 
 import { Formik, Field, Form } from "formik"
 import axios from "axios"
 import { useState, useEffect } from 'react'
@@ -8,6 +9,7 @@ export const Login = () => {
   const [token_o, setToken_o] = useState("")
   
   let data = ({
+    //register these come from the form 
     'grant_type': 'password',
     'client_id': 'web-dashboard',
     'client_secret': 'SuperSecretPassword',
@@ -34,9 +36,10 @@ export const Login = () => {
   const login = () => {
     //do login validation here then part means that correct 
     //local storage check if something correct 
+
+    //do error handlink 
     axios.request(config)
       .then((response) => {
-        console.log('in'); 
         setToken_o(response.data.access_token)
       })
       .catch((error) => {
@@ -52,12 +55,21 @@ export const Login = () => {
           initialValues={{ uname: "", pword: "" }}
           onSubmit={async (values) => {
             //call axios 
-            login
+            //shouldnt be here must b in separate use the layers to make it look good 
+            if (values.uname === data.username && values.pword === data.password) {
+              console.log(values,"correct",token_o)
+              //ehat does this code do?
+              login()
+              await new Promise((resolve) => setTimeout(resolve, 5000));
+              }else{
+                  console.log(values,'incorrect')
+              }
           }}
         >
           <Form>
             <Field name="uname" type="email" />
             <Field name="pword" type="text" />
+            {/* it will then go into showing the categories if credentials correct*/}
             <button type="submit">Submit</button>
           </Form>
         </Formik>
