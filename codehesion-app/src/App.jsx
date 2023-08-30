@@ -3,13 +3,13 @@
 import './App.css'
 
 import { Login } from './componets/Login';
-import { Register } from './componets/Register';
+//import { Register } from './componets/Register';
 
 function App() {
   return (
     <>
       <Login />
-      <Register/>
+      {/*<Register/>*/}
 
     </>
   )
