@@ -1,7 +1,10 @@
 //need a router so that after register then go login 
+
+import { Formik, Field, Form } from "formik"
+
+import axios from "axios"
 export const Register = () => {
     //like in login but the data comes from the user
-    const axios = require('axios');
     let name=''
     let surname=''
     let email=''
@@ -35,6 +38,9 @@ export const Register = () => {
         });
 
     return (
-        <div></div>
+        //have a user input form 
+        <div>
+
+        </div>
     )
 }
