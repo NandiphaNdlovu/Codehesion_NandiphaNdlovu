@@ -8,9 +8,13 @@ import { Register } from './componets/Register';
 function App() {
   return (
     <>
+    <h1>Home Page</h1>
+    <div>
       <Login />
       <Register/>
-
+    </div>
+      
+      
     </>
   )
 }
