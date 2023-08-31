@@ -1,18 +1,19 @@
 //need to make this global some how so i dont have to keep repeating this 
+
 import { Formik, Field, Form } from "formik"
 import axios from "axios"
 import { useState, useEffect } from 'react'
-
 //why refurse to use unsafe cookie on load
 //must put client_id and _secret in .env cant let everyone see it 
 export const Login = () => {
   const [token_o, setToken_o] = useState("")
-  
+  const client_id = import.meta.env.REACT_APP_client_id;
+  const client_secret = import.meta.env.REACT_APP_client_secret;
   let data = ({
     //register these come from the form 
     'grant_type': 'password',
-    'client_id': 'web-dashboard',
-    'client_secret': 'SuperSecretPassword',
+    'client_id': client_id,
+    'client_secret': client_secret,
     'scope': 'openid profile role email offline_access adminApi mobileApi',
     'username': 'admin@codehesion.co.za',
     'password': 'P@ssword1'

@@ -48,9 +48,8 @@ export const Register = () => {
             //call axios 
             //shouldnt be here must b in separate use the layers to make it look good 
             if (values.uname === data.username && values.pword === data.password) {
-              console.log(values,"correct",token_o)
+              console.log(values,"correct")
               //ehat does this code do?
-              login()
               await new Promise((resolve) => setTimeout(resolve, 5000));
               }else{
                   console.log(values,'incorrect')
