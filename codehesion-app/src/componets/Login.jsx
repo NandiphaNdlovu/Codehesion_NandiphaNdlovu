@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 //must put client_id and _secret in .env cant let everyone see it 
 export const Login = () => {
   const [token_o, setToken_o] = useState("")
+  //should be in separate js file
   const client_id = import.meta.env.REACT_APP_client_id;
   const client_secret = import.meta.env.REACT_APP_client_secret;
   let data = ({
