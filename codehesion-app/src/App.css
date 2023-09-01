@@ -5,3 +5,12 @@ body{
 .home{
     border: solid green;
 }
+.links-container{
+    margin: 5px;
+    padding: 10px 0 10px;
+}
+.links-container Link{
+    margin: 5px;
+    padding: 10px;
+    border: solid green;
+}
